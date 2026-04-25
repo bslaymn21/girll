@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="light" lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Contact MASHWIYATKOM grill restaurant. Mobile-first support via WhatsApp, click-to-call, and directions to our charcoal grill house." />
+    <meta name="keywords" content="Mashwiyatkom contact, Grill restaurant phone, Directions to Mashwiyatkom" />
+    <title>مشوياتكم | اتصل بنا</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Noto+Kufi+Arabic:wght@400;700&amp;family=Noto+Sans+Arabic:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="./js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <!-- Translation & Theme System -->
+    <script src="./js/translations.js"></script>
+    <script src="./js/language-selector.js"></script>
+    <script src="./js/theme-manager.js"></script>
+    <script src="./js/preloader.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/cart-global.js"></script>
+    <script src="./js/visual-effects.js"></script>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/933/933310.png">
+</head>
+<body class="font-body-md text-on-surface dark:bg-[#0a1014] transition-colors rtl-mode">
+    <!-- TopAppBar -->
+    <header class="glass-surface border-b border-slate-200 dark:border-white/10 docked full-width top-0 sticky z-50 transition-colors">
+        <div class="flex justify-between items-center w-full px-6 py-4 mx-auto max-w-container-max">
+            <div class="flex items-center gap-4">
+                <span class="text-lg font-bold tracking-widest text-[#991b1b] dark:text-[#f87171] font-h1" data-i18n="brand_name">مشوياتكم</span>
+            </div>
+            <nav class="hidden md:flex gap-md items-center">
+                <a class="text-slate-500 dark:text-slate-400 font-label-caps hover:text-[#991b1b]" href="index.html" data-i18n="nav_home">الرئيسية</a>
+                <a class="text-slate-500 dark:text-slate-400 font-label-caps hover:text-[#991b1b]" href="menu.html" data-i18n="nav_menu">المنيو</a>
+                <a class="text-slate-500 dark:text-slate-400 font-label-caps hover:text-[#991b1b]" href="reservation.html" data-i18n="nav_orders">حجز طاولة</a>
+                <a class="text-[#991b1b] dark:text-[#f87171] font-bold font-label-caps" href="contact.html" data-i18n="nav_contact">اتصل بنا</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button onclick="toggleLanguage()"
+                    class="p-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors flex items-center justify-center text-slate-500">
+                    <span class="material-symbols-outlined">translate</span>
+                </button>
+                <button id="theme-toggle"
+                    class="p-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors flex items-center justify-center text-slate-500">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-xl pb-32 text-center">
+        <div class="mb-16">
+            <h1 class="font-h1 text-4xl md:text-6xl text-[#991b1b] dark:text-white mb-6" data-i18n="contact_title">اتصل بنا</h1>
+            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto" data-i18n="contact_subtitle">يسعدنا تواصلك معنا. نحن بانتظار خدمتك دائماً.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white dark:bg-[#1a1c1e] p-8 rounded-3xl border border-slate-200 dark:border-white/5 shadow-xl">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"><span class="material-symbols-outlined text-4xl">chat</span></div>
+                <h3 class="text-2xl font-bold mb-2 text-slate-900 dark:text-white" data-i18n="contact_whatsapp_title">راسلنا عبر واتساب</h3>
+                <a href="https://wa.me/201099995678" target="_blank" class="block w-full bg-[#25D366] text-white py-4 rounded-xl font-bold mt-8 shadow-lg">ابدأ المحادثة الآن</a>
+            </div>
+            <div class="bg-white dark:bg-[#1a1c1e] p-8 rounded-3xl border border-slate-200 dark:border-white/5 shadow-xl">
+                <div class="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"><span class="material-symbols-outlined text-4xl">call</span></div>
+                <h3 class="text-2xl font-bold mb-2 text-slate-900 dark:text-white" data-i18n="contact_phone">اتصل بنا هاتفياً</h3>
+                <a href="tel:+201099995678" class="block w-full bg-[#991b1b] text-white py-4 rounded-xl font-bold mt-8 shadow-lg text-ltr">+20 10 9999 5678</a>
+            </div>
+        </div>
+
+        <div class="mt-20">
+            <h2 class="text-2xl font-black mb-8 italic" data-i18n="contact_social_title">تابعنا على منصات التواصل</h2>
+            <div class="flex justify-center gap-6">
+                <!-- Facebook -->
+                <a href="https://facebook.com/mashwiyatkom" target="_blank" class="w-14 h-14 rounded-2xl bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center hover:scale-110 transition-transform shadow-lg border border-[#1877F2]/20" title="Facebook">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com/mashwiyatkom" target="_blank" class="w-14 h-14 rounded-2xl bg-[#E4405F]/10 text-[#E4405F] flex items-center justify-center hover:scale-110 transition-transform shadow-lg border border-[#E4405F]/20" title="Instagram">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@mashwiyatkom" target="_blank" class="w-14 h-14 rounded-2xl bg-black/10 dark:bg-white/10 text-black dark:text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg border border-black/20 dark:border-white/20" title="TikTok">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.09-1.47-.88-.64-1.61-1.47-2.11-2.43-.02 3.41 0 6.82-.01 10.23-.19 2.04-1.25 4.03-3.1 5.04-1.6.87-3.62 1-5.32.36-1.73-.65-3.08-2.2-3.41-4.01-.48-2.58.74-5.35 3.09-6.52.79-.39 1.66-.58 2.54-.58.31 0 .62.01.93.04v4.03c-.22-.05-.44-.1-.67-.1-1.04-.13-2.11.26-2.82 1.05-.75.82-.87 2.05-.33 3.01.55.97 1.68 1.51 2.76 1.38 1.09-.13 1.95-1.01 2.11-2.09.02-3.8 0-7.61.01-11.41z"/></svg>
+                </a>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center bg-white dark:bg-slate-900 px-2 pb-safe border-t border-slate-200 dark:border-slate-800 z-50 h-16">
+        <a class="flex flex-col items-center justify-center text-slate-400 pt-2 flex-1 h-full active:scale-95 transition-transform" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-bold uppercase" data-i18n="nav_home">الرئيسية</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 pt-2 flex-1 h-full active:scale-95 transition-transform relative" href="menu.html">
+            <span class="material-symbols-outlined">restaurant_menu</span>
+            <span class="text-[10px] font-bold uppercase" data-i18n="nav_menu">المنيو</span>
+            <span class="global-cart-badge absolute top-1 right-1/2 translate-x-4 bg-[#991b1b] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-white dark:border-slate-900 hidden">0</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 pt-2 flex-1 h-full active:scale-95 transition-transform" href="reservation.html">
+            <span class="material-symbols-outlined">event_seat</span>
+            <span class="text-[10px] font-bold uppercase" data-i18n="nav_orders">الحجز</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-orange-600 border-t-2 border-orange-600 pt-2 flex-1 h-full active:scale-95 transition-transform" href="contact.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+            <span class="text-[10px] font-bold uppercase" data-i18n="nav_contact">تواصل</span>
+        </a>
+    </nav>
+
+
+    <footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-12 text-center">
+        <span class="font-bold text-[#991b1b] font-h1 text-2xl tracking-widest" data-i18n="brand_name">مشوياتكم</span>
+    </footer>
+</body>
+</html>

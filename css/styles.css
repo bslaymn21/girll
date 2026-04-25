@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+/* Material Symbols Configuration */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Global Styles */
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+    font-family: 'Epilogue', sans-serif;
+}
+
+html.dark body {
+    background-color: #0d1216; /* Deep Charcoal */
+    color: #f1f5f9;
+}
+
+html.dark p, 
+html.dark span:not(.material-symbols-outlined), 
+html.dark h1, 
+html.dark h2, 
+html.dark h3, 
+html.dark h4, 
+html.dark div {
+    color: inherit;
+}
+
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700 {
+    color: #f8fafc !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+
+/* Typography Specs */
+h1, h2, h3, .font-h1, .font-h2, .font-h3 {
+    font-family: 'Epilogue', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.font-label-caps {
+    font-family: 'Epilogue', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Grill Theme Specifics */
+html.dark .bg-surface,
+html.dark .bg-slate-900,
+html.dark .bg-white {
+    background-color: #1a1c1e !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.text-primary {
+    color: #991b1b !important; /* Maroon Red */
+}
+
+html.dark .text-primary {
+    color: #f87171 !important; /* Soft Red */
+}
+
+.text-secondary {
+    color: #ea580c !important; /* Flame Orange */
+}
+
+html.dark .text-secondary {
+    color: #fb923c !important;
+}
+
+/* Glassmorphism */
+.glass-surface {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+html.dark .glass-surface {
+    background-color: rgba(10, 16, 20, 0.75) !important;
+}
+
+.bioluminescent-glow:hover {
+    box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
+    transform: scale(1.02);
+}
+
+/* Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Selection Highlight */
+::selection {
+    background-color: #991b1b;
+    color: white;
+}
+
+/* Layout Utilities */
+.marquee-container {
+    --marquee-height: 400px;
+    --marquee-duration: 30s;
+    width: 100%;
+    height: var(--marquee-height);
+    overflow: hidden;
+    position: relative;
+    direction: ltr !important; 
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll var(--marquee-duration) linear infinite;
+    will-change: transform;
+}
+
+.marquee-item {
+    width: 600px;
+    height: 400px;
+    flex-shrink: 0;
+    margin-right: 3rem;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #f1f5f9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.marquee-item:hover { transform: translateY(-10px); }
+
+@keyframes marquee-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (max-width: 768px) {
+    .marquee-container { --marquee-height: 320px; }
+    .marquee-item { width: 300px; height: 320px; }
+}
+
+/* Review Cards */
+.review-card {
+    background: white;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html.dark .review-card {
+    background: #1a1c1e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.price-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(153, 27, 27, 0.9);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-weight: 800;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+/* Visual Effects & Animations */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header-scrolled {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1) !important;
+}
+
+html.dark .header-scrolled {
+    background-color: rgba(13, 18, 22, 0.9) !important;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5) !important;
+}
+
+.animate-in-up {
+    animation: slideUp 0.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+.animate-out-up {
+    animation: slideOutUp 0.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideOutUp {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(-20px) scale(0.9); }
+}
+
+.active-scale { transform: scale(0.96); transition: transform 0.1s ease; }
+
+/* Preloader Grill Animation */
+.preloader-container {
+    position: fixed; inset: 0; z-index: 9999;
+    background: white;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+html.dark .preloader-container { background: #0a1014; }
+.preloader-container.fade-out { opacity: 0; visibility: hidden; pointer-events: none; transition: 0.5s; }
+
+.animate-loading { animation: loading-bar 2s ease-in-out forwards; }
+@keyframes loading-bar { from { width: 0%; } to { width: 100%; } }
+
+.preloader-progress { width: 200px; height: 4px; background: rgba(0, 0, 0, 0.05); border-radius: 99px; overflow: hidden; margin-top: 32px; }
+html.dark .preloader-progress { background: rgba(255, 255, 255, 0.1); }
+.preloader-progress-bar { height: 100%; background: #ea580c; box-shadow: 0 0 15px rgba(234, 88, 12, 0.5); }
+
+/* Ken Burns */
+@keyframes ken-burns { from { transform: scale(1); } to { transform: scale(1.1); } }
+.animate-ken-burns { animation: ken-burns 15s ease-in-out infinite alternate; }
+
+/* RTL Font Overrides */
+.rtl-mode { font-family: 'Noto Sans Arabic', sans-serif !important; }
+.rtl-mode h1, .rtl-mode h2, .rtl-mode .font-h1, .rtl-mode .font-h2 {
+    font-family: 'Noto Kufi Arabic', sans-serif !important;
+    letter-spacing: 0 !important;
+}
+
+/* Conversion Banner */
+.conversion-banner {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    color: white; padding: 60px 40px; text-align: center; border-radius: 32px;
+}
+
+/* Premium Cart & Drawer */
+.cart-drawer {
+    position: fixed; top: 0; bottom: 0; width: 100%; max-width: 450px;
+    background: white; z-index: 200; 
+    inset-inline-end: 0; /* Left in RTL, Right in LTR */
+    transform: translateX(100%); /* Default hide for LTR */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column;
+}
+html[dir="rtl"] .cart-drawer {
+    transform: translateX(-100%); /* Hide for RTL (off-screen left) */
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+}
+html.dark .cart-drawer { background: #0a1014; }
+.cart-drawer.open { transform: translateX(0) !important; }
+
+
+.cart-overlay {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);
+    z-index: 150; opacity: 0; visibility: hidden; transition: 0.3s;
+}
+.cart-overlay.active { opacity: 1; visibility: visible; }
+
+.option-chip {
+    padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #f8fafc; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+html.dark .option-chip { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); }
+.option-chip.active { background: #991b1b; color: white; border-color: #991b1b; }
+
+/* Modal Styles */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px);
+    opacity: 0; visibility: hidden; transition: 0.3s; display: flex;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-content {
+    transform: scale(0.9) translateY(20px); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+
+/* Floating Cart Button */
+.floating-cart-btn {
+    position: fixed; bottom: 100px; 
+    inset-inline-start: 24px; /* Right in RTL, Left in LTR - Opposite to Drawer */
+    z-index: 100;
+}
+@media (max-width: 768px) {
+    .floating-cart-btn { bottom: 90px; }
+}
+
+
