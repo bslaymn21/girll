@@ -286,6 +286,38 @@
             const titles = { 'dashboard': 'لوحة التحكم', 'orders': 'إدارة الطلبات', 'menu': 'إدارة المنيو', 'qrcode': 'كود QR المنيو', 'settings': 'إعدادات النظام' };
             document.getElementById('page-title').innerText = titles[tabId];
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (tabId === 'menu') renderAdminMenu();
+        }
+
+        const menuData = [
+            { id: 1, name: "مشكل كباب وكفتة", category: "المشويات", price: 280 },
+            { id: 2, name: "ريش ضاني ملكي", category: "المشويات", price: 450 },
+            { id: 3, name: "فروج مشوي لبناني", category: "الدواجن", price: 190 }
+        ];
+
+        function renderAdminMenu() {
+            const list = document.getElementById('menu-items-grid');
+            list.innerHTML = menuData.map(item => `
+                <div class="premium-card p-6 flex gap-6 items-center animate-in">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white/5 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined text-4xl opacity-20 text-[#ff4d00]">restaurant</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="font-black text-lg">${item.name}</h4>
+                        <p class="text-gray-500 text-xs mb-3">${item.category}</p>
+                        <span class="text-[#ff4d00] font-black">${item.price} ج.م</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button onclick="demoAction('marketing')" class="w-10 h-10 rounded-xl bg-white/5 text-gray-400 hover:text-white transition-all">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                        <button onclick="demoAction('marketing')" class="w-10 h-10 rounded-xl bg-white/5 text-red-500/50 hover:text-red-500 transition-all">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
         }
 
         function demoAction(type) {
