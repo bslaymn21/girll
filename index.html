@@ -17,6 +17,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+    </style>
 </head>
 
 <body
@@ -547,17 +554,17 @@
     </div>
 
     <!-- Admin Floating Access -->
-    <div class="fixed bottom-24 left-6 z-[80] group">
-        <div class="absolute bottom-full left-0 mb-4 transition-all duration-300 pointer-events-none">
-            <div
-                class="bg-black/80 backdrop-blur-md text-white text-[10px] font-black py-2 px-4 rounded-xl border border-white/10 whitespace-nowrap shadow-2xl animate-bounce">
-                اذهب إلى لوحة التحكم
+    <!-- Admin Access Floating (Mobile Friendly) -->
+    <div class="fixed bottom-28 left-4 z-[90] md:bottom-24 md:left-6 group">
+        <div class="absolute bottom-full left-0 mb-4 transition-all duration-300 opacity-0 group-hover:opacity-100 md:opacity-100 pointer-events-none">
+            <div class="bg-black/80 backdrop-blur-md text-white text-[10px] font-black py-2 px-4 rounded-xl border border-white/10 whitespace-nowrap shadow-2xl">
+                لوحة التحكم
             </div>
             <div class="w-2 h-2 bg-black/80 rotate-45 border-r border-b border-white/10 mx-4 -mt-1"></div>
         </div>
         <a href="./admin/dashboard.html"
-            class="w-12 h-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center text-gray-500 hover:text-[#ff4d00] hover:bg-white/10 transition-all shadow-xl">
-            <span class="material-symbols-outlined">admin_panel_settings</span>
+            class="w-10 h-10 md:w-12 md:h-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-gray-400 hover:text-[#ff4d00] hover:bg-white/10 transition-all shadow-2xl">
+            <span class="material-symbols-outlined text-xl md:text-2xl">admin_panel_settings</span>
         </a>
     </div>
 
