@@ -21,42 +21,45 @@
             --outline: rgba(255, 255, 255, 0.05);
         }
 
-        * { font-family: 'Cairo', sans-serif; }
+        * { font-family: 'Cairo', sans-serif; -webkit-tap-highlight-color: transparent; }
         body { background-color: var(--bg); color: white; direction: rtl; overflow-x: hidden; }
 
         .premium-card {
             background: var(--surface);
             border: 1px solid var(--outline);
-            border-radius: 24px;
-            transition: all 0.4s ease;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
 
-        .premium-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px -15px rgba(255, 77, 0, 0.2);
+        @media (min-width: 768px) {
+            .premium-card { border-radius: 24px; }
         }
 
         .sidebar-item { border-radius: 16px; color: #888; margin: 4px 12px; transition: all 0.3s; }
         .sidebar-item.active { background: var(--primary); color: white !important; box-shadow: 0 10px 20px -5px rgba(255, 77, 0, 0.3); }
 
-        .btn-primary { background: var(--primary); color: white; border-radius: 16px; font-weight: 900; transition: all 0.3s; box-shadow: 0 10px 20px rgba(255, 77, 0, 0.2); }
-        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(255, 77, 0, 0.3); }
+        .btn-primary { background: var(--primary); color: white; border-radius: 14px; font-weight: 900; transition: all 0.3s; }
+        @media (min-width: 768px) { .btn-primary { border-radius: 16px; } }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .nav-btn.active { color: var(--primary); }
+        .nav-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .animate-in { animation: fadeIn 0.4s ease forwards; }
 
-        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased selection:bg-[#ff4d00]">
     <div class="flex min-h-screen">
         
-        <!-- Sidebar -->
+        <!-- Sidebar (Desktop Only) -->
         <aside class="fixed inset-y-0 right-0 z-50 w-72 bg-[var(--sidebar)] border-l border-white/5 hidden lg:flex flex-col">
-            <div class="px-8 py-10 flex items-center gap-4 border-b border-white/5 mb-4 text-center justify-center">
-                <img src="../assets/logo.png" alt="Sultan" class="h-20 w-auto drop-shadow-2xl">
+            <div class="px-8 py-10 flex flex-col items-center gap-4 border-b border-white/5 mb-4 text-center">
+                <img src="../assets/logo.png" alt="Sultan" class="h-20 w-auto">
+                <h2 class="text-xl font-black text-[#ff4d00]">AL SULTAN</h2>
             </div>
 
             <nav class="flex-grow px-3 space-y-1">
@@ -83,7 +86,7 @@
             </nav>
 
             <div class="p-6 mt-auto">
-                <button onclick="window.location.href='../index.html'" class="w-full flex items-center gap-3 px-5 py-3 text-red-500 hover:bg-red-500/10 rounded-xl font-bold">
+                <button onclick="window.location.href='../index.html'" class="w-full flex items-center justify-center gap-3 px-5 py-4 text-red-500 hover:bg-red-500/10 rounded-xl font-bold transition-all">
                     <span class="material-symbols-outlined">logout</span>
                     <span>العودة للموقع</span>
                 </button>
@@ -93,65 +96,70 @@
         <!-- Main Content -->
         <main class="flex-grow flex flex-col lg:ms-72 pb-24 lg:pb-0 transition-all duration-300">
             <!-- Header -->
-            <header class="bg-[#0f0f0f]/80 backdrop-blur-xl border-b border-white/5 py-4 px-6 md:px-10 sticky top-0 z-40 flex justify-between items-center">
-                <div>
-                    <h1 class="text-xl font-black text-white" id="page-title">لوحة التحكم</h1>
-                    <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest hidden md:block">مرحباً يا شيف السلطان</p>
+            <header class="bg-[#0f0f0f]/80 backdrop-blur-xl border-b border-white/5 py-3 md:py-4 px-5 md:px-10 sticky top-0 z-40 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <img src="../assets/logo.png" class="h-10 w-auto lg:hidden">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-black text-white" id="page-title">لوحة التحكم</h1>
+                        <p class="text-[9px] md:text-[10px] text-gray-500 font-bold uppercase tracking-widest hidden sm:block">مرحباً يا شيف السلطان</p>
+                    </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#ff4d00] to-orange-400 flex items-center justify-center font-black">A</div>
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-to-tr from-[#ff4d00] to-orange-400 flex items-center justify-center font-black text-xs md:text-base">A</div>
                 </div>
             </header>
 
             <!-- Tabs Content -->
-            <div class="p-6 md:p-10 space-y-10">
+            <div class="p-4 md:p-10 space-y-6 md:space-y-10">
 
                 <!-- 1. Dashboard Tab -->
-                <div id="content-dashboard" class="space-y-10 animate-in">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="premium-card p-8 flex flex-col gap-4">
-                            <div class="w-12 h-12 bg-[#ff4d00]/10 text-[#ff4d00] rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined">trending_up</span></div>
-                            <h4 class="text-3xl font-black">124k</h4>
-                            <p class="text-xs text-gray-500 font-bold">المبيعات الإجمالية</p>
+                <div id="content-dashboard" class="space-y-6 md:space-y-10 animate-in">
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        <div class="premium-card p-5 md:p-8 flex flex-col gap-2 md:gap-4">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-[#ff4d00]/10 text-[#ff4d00] rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-xl md:text-2xl">trending_up</span></div>
+                            <h4 class="text-xl md:text-3xl font-black">124k</h4>
+                            <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-tight">المبيعات</p>
                         </div>
-                        <div class="premium-card p-8 flex flex-col gap-4">
-                            <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined">shopping_basket</span></div>
-                            <h4 class="text-3xl font-black">48</h4>
-                            <p class="text-xs text-gray-500 font-bold">طلبات اليوم</p>
+                        <div class="premium-card p-5 md:p-8 flex flex-col gap-2 md:gap-4">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-xl md:text-2xl">shopping_basket</span></div>
+                            <h4 class="text-xl md:text-3xl font-black">48</h4>
+                            <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-tight">الطلبات</p>
                         </div>
-                        <div class="premium-card p-8 flex flex-col gap-4">
-                            <div class="w-12 h-12 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined">group</span></div>
-                            <h4 class="text-3xl font-black">1,250</h4>
-                            <p class="text-xs text-gray-500 font-bold">زوار اليوم</p>
+                        <div class="premium-card p-5 md:p-8 flex flex-col gap-2 md:gap-4">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-green-500/10 text-green-500 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-xl md:text-2xl">group</span></div>
+                            <h4 class="text-xl md:text-3xl font-black">1.2k</h4>
+                            <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-tight">الزوار</p>
                         </div>
-                        <div class="premium-card p-8 flex flex-col gap-4">
-                            <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined">star</span></div>
-                            <h4 class="text-3xl font-black">4.9</h4>
-                            <p class="text-xs text-gray-500 font-bold">تقييم المطعم</p>
+                        <div class="premium-card p-5 md:p-8 flex flex-col gap-2 md:gap-4">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-xl md:text-2xl">star</span></div>
+                            <h4 class="text-xl md:text-3xl font-black">4.9</h4>
+                            <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-tight">التقييم</p>
                         </div>
                     </div>
 
+                    <!-- Live Orders Table -->
                     <div class="premium-card overflow-hidden">
-                        <div class="p-8 border-b border-white/5 flex justify-between items-center">
-                            <h3 class="font-black text-lg">الطلبات الواردة (Live)</h3>
-                            <span class="px-3 py-1 bg-green-500/10 text-green-500 text-[10px] font-black rounded-full animate-pulse uppercase">Active Now</span>
+                        <div class="p-5 md:p-8 border-b border-white/5 flex justify-between items-center">
+                            <h3 class="font-black text-sm md:text-lg">الطلبات الواردة</h3>
+                            <span class="px-2 py-0.5 bg-green-500/10 text-green-500 text-[8px] md:text-[10px] font-black rounded-full animate-pulse">LIVE</span>
                         </div>
                         <div class="overflow-x-auto">
-                            <table class="w-full text-right text-sm">
+                            <table class="w-full text-right text-xs md:text-sm whitespace-nowrap">
                                 <tbody class="divide-y divide-white/5">
                                     <tr class="hover:bg-white/5 transition-colors">
-                                        <td class="p-6 font-bold">#ORD-9021</td>
-                                        <td class="p-6 font-black">محمد عبد الله</td>
-                                        <td class="p-6">1x كباب كفتة، 2x كفتة ضاني</td>
-                                        <td class="p-6 font-black text-[#ff4d00]">840 ج.م</td>
-                                        <td class="p-6 text-left"><button onclick="demoAction('order')" class="px-4 py-2 bg-white/5 hover:bg-[#ff4d00] rounded-xl transition-all font-bold">قبول الطلب</button></td>
+                                        <td class="p-4 md:p-6 font-bold">#ORD-9021</td>
+                                        <td class="p-4 md:p-6 font-black hidden sm:table-cell">محمد عبد الله</td>
+                                        <td class="p-4 md:p-6 opacity-70">كباب كفتة، ريش..</td>
+                                        <td class="p-4 md:p-6 font-black text-[#ff4d00]">840ج</td>
+                                        <td class="p-4 md:p-6 text-left"><button onclick="demoAction('order')" class="px-3 py-1.5 bg-white/5 hover:bg-[#ff4d00] rounded-lg transition-all font-bold">قبول</button></td>
                                     </tr>
                                     <tr class="hover:bg-white/5 transition-colors">
-                                        <td class="p-6 font-bold">#ORD-9020</td>
-                                        <td class="p-6 font-black">سارة أحمد</td>
-                                        <td class="p-6">1x ريش ضاني، سلطة خضراء</td>
-                                        <td class="p-6 font-black text-[#ff4d00]">520 ج.م</td>
-                                        <td class="p-6 text-left"><span class="px-3 py-1 bg-white/10 text-gray-400 text-[10px] font-black rounded-full uppercase">قيد التجهيز</span></td>
+                                        <td class="p-4 md:p-6 font-bold">#ORD-9020</td>
+                                        <td class="p-4 md:p-6 font-black hidden sm:table-cell">سارة أحمد</td>
+                                        <td class="p-4 md:p-6 opacity-70">1x ريش ضاني..</td>
+                                        <td class="p-4 md:p-6 font-black text-[#ff4d00]">520ج</td>
+                                        <td class="p-4 md:p-6 text-left"><span class="px-2 py-1 bg-white/10 text-gray-500 text-[9px] font-black rounded-md uppercase">قيد التجهيز</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -160,48 +168,36 @@
                 </div>
 
                 <!-- 2. Orders Tab -->
-                <div id="content-orders" class="hidden space-y-8 animate-in">
-                    <div class="premium-card p-12 text-center flex flex-col items-center gap-6 opacity-60">
-                        <span class="material-symbols-outlined text-7xl text-[#ff4d00]">history</span>
+                <div id="content-orders" class="hidden animate-in">
+                    <div class="premium-card p-10 md:p-20 text-center flex flex-col items-center gap-4 md:gap-6 opacity-60">
+                        <span class="material-symbols-outlined text-5xl md:text-7xl text-[#ff4d00]">history</span>
                         <div>
-                            <h3 class="text-2xl font-black">سجل الطلبات</h3>
-                            <p class="text-gray-500 font-bold mt-2">لا توجد طلبات مؤرشفة في الوقت الحالي. جميع الطلبات قيد المتابعة.</p>
+                            <h3 class="text-xl md:text-2xl font-black">سجل الطلبات فارغ</h3>
+                            <p class="text-xs md:text-sm text-gray-500 font-bold mt-2">سيتم عرض الطلبات المنتهية هنا لاحقاً.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. Menu Tab -->
-                <div id="content-menu" class="hidden space-y-10 animate-in">
-                    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                        <h2 class="text-3xl font-black">إدارة <span class="text-[#ff4d00]">قائمة الطعام</span></h2>
-                        <button onclick="demoAction('add')" class="btn-primary px-10 py-4 flex items-center gap-3">
+                <div id="content-menu" class="hidden space-y-6 md:space-y-10 animate-in">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6">
+                        <h2 class="text-2xl md:text-3xl font-black">إدارة <span class="text-[#ff4d00]">المنيو</span></h2>
+                        <button onclick="demoAction('marketing')" class="w-full md:w-auto btn-primary px-6 py-3 md:px-10 md:py-4 flex items-center justify-center gap-3 shadow-lg shadow-[#ff4d00]/20">
                             <span class="material-symbols-outlined">add_circle</span>
-                            إضافة وجبة جديدة
+                            إضافة وجبة
                         </button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                        <div class="premium-card p-6 flex gap-6 items-center">
-                            <div class="w-24 h-24 bg-white/5 rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-4xl opacity-20">restaurant</span></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
+                        <div class="premium-card p-4 md:p-6 flex gap-4 md:gap-6 items-center">
+                            <div class="w-16 h-16 md:w-20 md:h-20 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-2xl md:text-3xl opacity-20">restaurant</span></div>
                             <div class="flex-grow">
-                                <h4 class="font-black text-lg">مشكل كباب وكفتة</h4>
-                                <p class="text-gray-500 text-xs mb-2">المشويات</p>
-                                <span class="text-[#ff4d00] font-black">280 ج.م</span>
+                                <h4 class="font-black text-sm md:text-lg leading-tight">مشكل كباب وكفتة</h4>
+                                <p class="text-gray-500 text-[10px] md:text-xs mb-1 md:mb-2">المشويات</p>
+                                <span class="text-[#ff4d00] font-black text-sm md:text-base">280 ج.م</span>
                             </div>
                             <div class="flex flex-col gap-2">
-                                <button onclick="demoAction('edit')" class="w-10 h-10 rounded-xl bg-white/5 text-gray-400 hover:text-white"><span class="material-symbols-outlined">edit</span></button>
-                                <button onclick="demoAction('delete')" class="w-10 h-10 rounded-xl bg-white/5 text-red-500/50 hover:text-red-500"><span class="material-symbols-outlined">delete</span></button>
-                            </div>
-                        </div>
-                        <div class="premium-card p-6 flex gap-6 items-center">
-                            <div class="w-24 h-24 bg-white/5 rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-4xl opacity-20">restaurant</span></div>
-                            <div class="flex-grow">
-                                <h4 class="font-black text-lg">ريش ضاني ملكي</h4>
-                                <p class="text-gray-500 text-xs mb-2">المشويات</p>
-                                <span class="text-[#ff4d00] font-black">450 ج.م</span>
-                            </div>
-                            <div class="flex flex-col gap-2">
-                                <button class="w-10 h-10 rounded-xl bg-white/5 text-gray-400"><span class="material-symbols-outlined">edit</span></button>
-                                <button class="w-10 h-10 rounded-xl bg-white/5 text-red-500/50"><span class="material-symbols-outlined">delete</span></button>
+                                <button onclick="demoAction('marketing')" class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-white/5 text-gray-400"><span class="material-symbols-outlined text-sm md:text-base">edit</span></button>
+                                <button onclick="demoAction('marketing')" class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-white/5 text-red-500/50"><span class="material-symbols-outlined text-sm md:text-base">delete</span></button>
                             </div>
                         </div>
                     </div>
@@ -209,83 +205,36 @@
 
                 <!-- 4. QR Code Tab -->
                 <div id="content-qrcode" class="hidden animate-in">
-                    <div class="max-w-xl mx-auto premium-card overflow-hidden text-center">
-                        <div class="bg-[#ff4d00] p-10 text-white"><h2 class="text-2xl font-black italic">QR Code المنيو</h2></div>
-                        <div class="p-10 flex flex-col items-center gap-8">
-                            <div class="p-8 bg-white rounded-[2.5rem] shadow-2xl border-8 border-white/10">
-                                <div class="w-48 h-48 bg-gray-100 flex items-center justify-center text-gray-300">
-                                    <span class="material-symbols-outlined text-7xl">qr_code_2</span>
+                    <div class="max-w-xl mx-auto premium-card overflow-hidden text-center shadow-2xl">
+                        <div class="bg-[#ff4d00] p-6 md:p-10 text-white"><h2 class="text-lg md:text-2xl font-black italic uppercase tracking-widest">Digital Menu QR</h2></div>
+                        <div class="p-8 md:p-10 flex flex-col items-center gap-6 md:gap-8">
+                            <div class="p-6 md:p-8 bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border-4 md:border-8 border-white/10">
+                                <div class="w-36 h-36 md:w-48 md:h-48 bg-gray-100 flex items-center justify-center text-gray-300">
+                                    <span class="material-symbols-outlined text-5xl md:text-7xl">qr_code_2</span>
                                 </div>
                             </div>
-                            <button onclick="demoAction('download')" class="w-full py-5 btn-primary flex justify-center items-center gap-3">
-                                <span class="material-symbols-outlined">download</span> تحميل كود الطباعة
+                            <button onclick="demoAction('marketing')" class="w-full py-4 md:py-5 btn-primary flex justify-center items-center gap-3">
+                                <span class="material-symbols-outlined">download</span> تحميل الكود
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. Settings Tab -->
-                <div id="content-settings" class="hidden animate-in max-w-4xl mx-auto">
-                    <div class="premium-card p-8 md:p-12 space-y-12">
-                        <div class="flex items-center gap-6 border-b border-white/5 pb-8">
-                            <div class="w-16 h-16 bg-[#ff4d00]/10 text-[#ff4d00] rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-3xl">storefront</span>
+                <div id="content-settings" class="hidden animate-in max-w-2xl mx-auto">
+                    <div class="premium-card p-6 md:p-10 space-y-6 md:space-y-8">
+                        <h2 class="text-xl md:text-2xl font-black border-b border-white/5 pb-4 md:pb-6">إعدادات المتجر</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] md:text-xs font-black text-gray-500 uppercase mr-1">رقم الواتساب</label>
+                                <input type="text" value="01012345678" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 text-white font-bold outline-none focus:border-[#ff4d00] text-sm">
                             </div>
-                            <div>
-                                <h2 class="text-2xl font-black">إعدادات الهوية والتواصل</h2>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">تحديث معلومات المطعم والروابط</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <!-- Basic Info -->
-                            <div class="space-y-6">
-                                <h3 class="text-xs font-black text-[#ff4d00] uppercase tracking-widest border-r-4 border-[#ff4d00] pr-4">المعلومات الأساسية</h3>
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">اسم المطعم</label>
-                                        <input type="text" value="مشويات السلطان" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                    </div>
-                                    <div>
-                                        <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">رقم الواتساب الرسمي</label>
-                                        <input type="text" value="01012345678" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                    </div>
-                                    <div>
-                                        <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">العنوان بالتفصيل</label>
-                                        <input type="text" value="القاهرة، التجمع الخامس، شارع التسعين" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Social & Hours -->
-                            <div class="space-y-6">
-                                <h3 class="text-xs font-black text-gray-500 uppercase tracking-widest border-r-4 border-gray-500 pr-4">التواصل الاجتماعي والمواعيد</h3>
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">رابط فيسبوك</label>
-                                        <input type="text" value="facebook.com/alsultan" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                    </div>
-                                    <div>
-                                        <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">رابط انستغرام</label>
-                                        <input type="text" value="instagram.com/alsultan" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                    </div>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">وقت الفتح</label>
-                                            <input type="time" value="12:00" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                        </div>
-                                        <div>
-                                            <label class="text-[10px] font-black text-gray-500 uppercase block mb-2 mr-1">وقت الإغلاق</label>
-                                            <input type="time" value="02:00" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white font-bold outline-none focus:border-[#ff4d00]">
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] md:text-xs font-black text-gray-500 uppercase mr-1">اسم المطعم</label>
+                                <input type="text" value="مشويات السلطان" onchange="demoAction('marketing')" class="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 text-white font-bold outline-none focus:border-[#ff4d00] text-sm">
                             </div>
                         </div>
-
-                        <div class="pt-6 border-t border-white/5">
-                            <button onclick="demoAction('marketing')" class="w-full py-5 btn-primary text-lg">حفظ كافة التغييرات</button>
-                        </div>
+                        <button onclick="demoAction('marketing')" class="w-full py-4 md:py-5 btn-primary text-sm md:text-base">حفظ كافة التغييرات</button>
                     </div>
                 </div>
 
@@ -293,27 +242,31 @@
         </main>
     </div>
 
-    <!-- Mobile Navigation -->
-    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#0f0f0f]/90 backdrop-blur-2xl border-t border-white/5 px-6 py-3 flex justify-between items-center z-[100] shadow-2xl">
-        <button onclick="switchTab('dashboard')" id="mobile-tab-dashboard" class="nav-btn active flex flex-col items-center gap-1 text-gray-500">
-            <span class="material-symbols-outlined text-2xl">dashboard</span>
-            <span class="text-[9px] font-black uppercase">الرئيسية</span>
+    <!-- Mobile Navigation (Bottom Bar) -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#0f0f0f]/90 backdrop-blur-2xl border-t border-white/5 h-20 flex items-center justify-around px-2 z-[100] shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+        <button onclick="switchTab('dashboard')" id="mobile-tab-dashboard" class="nav-btn active flex flex-col items-center gap-1 text-gray-500 transition-all">
+            <span class="material-symbols-outlined text-[26px]">dashboard</span>
+            <span class="text-[8px] font-black uppercase tracking-tight">الرئيسية</span>
         </button>
-        <button onclick="switchTab('orders')" id="mobile-tab-orders" class="nav-btn flex flex-col items-center gap-1 text-gray-500">
-            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
-            <span class="text-[9px] font-black uppercase">الطلبات</span>
+        <button onclick="switchTab('orders')" id="mobile-tab-orders" class="nav-btn flex flex-col items-center gap-1 text-gray-500 transition-all">
+            <span class="material-symbols-outlined text-[26px]">shopping_cart</span>
+            <span class="text-[8px] font-black uppercase tracking-tight">الطلبات</span>
         </button>
-        <button onclick="switchTab('menu')" id="mobile-tab-menu" class="nav-btn flex flex-col items-center gap-1 text-gray-500">
-            <span class="material-symbols-outlined text-2xl">restaurant_menu</span>
-            <span class="text-[9px] font-black uppercase">المنيو</span>
+        <button onclick="switchTab('menu')" id="mobile-tab-menu" class="nav-btn flex flex-col items-center gap-1 text-gray-500 transition-all">
+            <span class="material-symbols-outlined text-[26px]">restaurant_menu</span>
+            <span class="text-[8px] font-black uppercase tracking-tight">المنيو</span>
         </button>
-        <button onclick="switchTab('qrcode')" id="mobile-tab-qrcode" class="nav-btn flex flex-col items-center gap-1 text-gray-500">
-            <span class="material-symbols-outlined text-2xl">qr_code_2</span>
-            <span class="text-[9px] font-black uppercase">كود QR</span>
+        <button onclick="switchTab('qrcode')" id="mobile-tab-qrcode" class="nav-btn flex flex-col items-center gap-1 text-gray-500 transition-all">
+            <span class="material-symbols-outlined text-[26px]">qr_code_2</span>
+            <span class="text-[8px] font-black uppercase tracking-tight">كود QR</span>
+        </button>
+        <button onclick="switchTab('settings')" id="mobile-tab-settings" class="nav-btn flex flex-col items-center gap-1 text-gray-500 transition-all">
+            <span class="material-symbols-outlined text-[26px]">settings</span>
+            <span class="text-[8px] font-black uppercase tracking-tight">الإعدادات</span>
         </button>
     </nav>
 
-    <style>.nav-btn.active { color: #ff4d00; }</style>
+    <style>.nav-btn.active { color: #ff4d00; transform: translateY(-2px); }</style>
 
     <script>
         function switchTab(tabId) {
@@ -326,18 +279,10 @@
 
             const titles = { 'dashboard': 'لوحة التحكم', 'orders': 'إدارة الطلبات', 'menu': 'إدارة المنيو', 'qrcode': 'كود QR المنيو', 'settings': 'إعدادات النظام' };
             document.getElementById('page-title').innerText = titles[tabId];
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function demoAction(type) {
-            const actions = {
-                'order': { title: 'تم قبول الطلب!', text: 'سيتم البدء في تحضير الوجبة فوراً.', icon: 'success' },
-                'add': { title: 'إضافة وجبة', text: 'هذه ميزة تجريبية، سيتم تفعيل الإضافة الفعلية عند ربط قاعدة البيانات.', icon: 'info' },
-                'edit': { title: 'تعديل الصنف', text: 'يمكنك تعديل بيانات الوجبة في النسخة النهائية.', icon: 'info' },
-                'delete': { title: 'هل أنت متأكد؟', text: 'سيتم حذف هذا الصنف من المنيو نهائياً.', icon: 'warning' },
-                'save': { title: 'تم الحفظ بنجاح!', text: 'تم تحديث إعدادات المطعم في الذاكرة المؤقتة.', icon: 'success' },
-                'download': { title: 'جاري التحضير للطباعة', text: 'يتم الآن توليد ملف PDF عالي الجودة لكود QR.', icon: 'info' }
-            };
-
             if (type === 'marketing') {
                 Swal.fire({
                     title: 'هذا مجرد عرض توضيحي (Demo)',
@@ -357,6 +302,10 @@
                 });
                 return;
             }
+            
+            const actions = {
+                'order': { title: 'تم قبول الطلب!', text: 'سيتم البدء في تحضير الوجبة فوراً.', icon: 'success' }
+            };
             
             Swal.fire({
                 ...actions[type],
