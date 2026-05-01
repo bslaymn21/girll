@@ -252,8 +252,8 @@ function calculateItemTotal(item) {
 function closeProductModal() {
     const modal = document.getElementById('product-modal');
     modal.classList.add('opacity-0', 'pointer-events-none');
-    modal.querySelector('.bg-[var(--bg)]').classList.add('scale-90');
-    modal.querySelector('.bg-[var(--bg)]').classList.remove('scale-100');
+    modal.querySelector('.modal-content').classList.add('scale-90');
+    modal.querySelector('.modal-content').classList.remove('scale-100');
     document.body.style.overflow = 'auto';
 }
 
@@ -359,8 +359,8 @@ function openCheckoutModal() {
     }
     const modal = document.getElementById('checkout-modal');
     modal.classList.remove('opacity-0', 'pointer-events-none');
-    modal.querySelector('.bg-[#0f0f0f]').classList.remove('scale-90');
-    modal.querySelector('.bg-[#0f0f0f]').classList.add('scale-100');
+    modal.querySelector('.modal-content').classList.remove('scale-90');
+    modal.querySelector('.modal-content').classList.add('scale-100');
     
     document.getElementById('modal-name').value = localStorage.getItem('customerName') || '';
     document.getElementById('modal-phone').value = localStorage.getItem('customerPhone') || '';
@@ -370,8 +370,8 @@ function openCheckoutModal() {
 function closeCheckoutModal() {
     const modal = document.getElementById('checkout-modal');
     modal.classList.add('opacity-0', 'pointer-events-none');
-    modal.querySelector('.bg-[#0f0f0f]').classList.add('scale-90');
-    modal.querySelector('.bg-[#0f0f0f]').classList.remove('scale-100');
+    modal.querySelector('.modal-content').classList.add('scale-90');
+    modal.querySelector('.modal-content').classList.remove('scale-100');
 }
 
 function confirmOrder() {
@@ -438,23 +438,29 @@ function showToast(message, type = 'info') {
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
     
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 100) {
+        if (window.scrollY >= sectionTop - 150) {
             current = section.getAttribute('id');
         }
     });
 
-    navLinks.forEach(link => {
+    const updateLink = (link) => {
+        const href = link.getAttribute('href');
         link.classList.remove('text-[#ff4d00]');
         link.classList.add('text-gray-500');
-        if (link.getAttribute('href') === `#${current}` || (current === 'home' && link.getAttribute('href') === '#')) {
+        
+        if (href === `#${current}` || (current === 'home' && href === '#')) {
             link.classList.add('text-[#ff4d00]');
             link.classList.remove('text-gray-500');
         }
-    });
+    };
+
+    navLinks.forEach(updateLink);
+    mobileLinks.forEach(updateLink);
 });
 
 // Scroll to Top Logic

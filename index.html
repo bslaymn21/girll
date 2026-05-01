@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشويات السلطان | الطعم الأصلي</title>
-    
+    <title data-i18n="title">مشويات السلطان | الطعم الأصلي</title>
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body class="bg-[var(--bg)] text-[var(--text)] font-['Cairo'] selection:bg-[#ff4d00] selection:text-white transition-colors duration-500 scroll-smooth">
+
+<body
+    class="bg-[var(--bg)] text-[var(--text)] font-['Cairo'] selection:bg-[#ff4d00] selection:text-white transition-colors duration-500 scroll-smooth">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[100] bg-[var(--bg)] flex flex-col items-center justify-center transition-opacity duration-700">
+    <div id="preloader"
+        class="fixed inset-0 z-[100] bg-[var(--bg)] flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="relative w-32 h-32 mb-8">
-            <div class="absolute inset-0 rounded-full border-4 border-[#ff4d00]/20 border-t-[#ff4d00] animate-spin"></div>
+            <div class="absolute inset-0 rounded-full border-4 border-[#ff4d00]/20 border-t-[#ff4d00] animate-spin">
+            </div>
             <img src="./assets/logo.png" alt="Logo" class="absolute inset-0 m-auto w-24 h-24 object-contain">
         </div>
-        <h2 class="text-2xl font-black tracking-widest animate-pulse text-[#ff4d00]">جاري التحضير...</h2>
+        <h2 class="text-2xl font-black tracking-widest animate-pulse text-[#ff4d00]" data-i18n="preloader">جاري
+            التحضير...</h2>
     </div>
 
     <!-- Header -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-[var(--bg)]/80 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-6 md:px-12">
+    <header
+        class="fixed top-0 inset-x-0 z-50 bg-[var(--bg)]/80 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-6 md:px-12">
         <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
             <a href="#" class="flex items-center gap-3">
                 <img src="./assets/logo.png" alt="Al Sultan" class="h-16 w-auto">
                 <div class="hidden md:block">
-                    <h1 class="text-xl font-black leading-none">مشويات السلطان</h1>
-                    <span class="text-[10px] text-[#ff4d00] uppercase tracking-[0.3em]">Master of Grills</span>
+                    <h1 class="text-xl font-black leading-none" data-i18n="brand">مشويات السلطان</h1>
+                    <span class="text-[10px] text-[#ff4d00] uppercase tracking-[0.3em]" data-i18n="master">Master of
+                        Grills</span>
                 </div>
             </a>
-            
+
             <nav class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
-                <a href="#" class="nav-link text-[#ff4d00] transition-colors">الرئيسية</a>
-                <a href="#menu" class="nav-link text-gray-500 hover:text-white transition-colors">القائمة</a>
-                <a href="#process" class="nav-link text-gray-500 hover:text-white transition-colors">سر المهنة</a>
-                <a href="#contact" class="nav-link text-gray-500 hover:text-white transition-colors">اتصل بنا</a>
+                <a href="#" class="nav-link text-[#ff4d00] transition-colors" data-i18n="nav_home">الرئيسية</a>
+                <a href="#menu" class="nav-link text-gray-500 hover:text-white transition-colors"
+                    data-i18n="nav_menu">القائمة</a>
+                <a href="#process" class="nav-link text-gray-500 hover:text-white transition-colors"
+                    data-i18n="nav_process">سر المهنة</a>
+                <a href="#contact" class="nav-link text-gray-500 hover:text-white transition-colors"
+                    data-i18n="nav_contact">اتصل بنا</a>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -53,64 +65,85 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative min-h-screen flex items-center justify-start px-6 md:px-20 overflow-hidden pt-20">
+        <section id="home"
+            class="relative min-h-screen flex items-center justify-start px-6 md:px-20 overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop" alt="Hero" class="w-full h-full object-cover animate-ken-burns">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop"
+                    alt="Hero" class="w-full h-full object-cover animate-ken-burns">
                 <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
 
             <div class="relative z-10 max-w-4xl">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full mb-8 animate-fade-in-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full mb-8 animate-fade-in-up">
                     <span class="w-2 h-2 bg-[#ff4d00] rounded-full animate-ping"></span>
-                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/80">أفضل مشويات في المدينة</span>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/80" data-i18n="hero_badge">أفضل
+                        مشويات في المدينة</span>
                 </div>
-                <h2 class="text-6xl md:text-9xl font-black mb-8 leading-tight animate-fade-in-up" style="animation-delay: 0.2s">
-                    فن الشواء <br> <span class="text-[#ff4d00] drop-shadow-[0_0_30px_rgba(255,77,0,0.4)]">على أصوله</span>
+                <h2 class="text-6xl md:text-9xl font-black mb-8 leading-tight animate-fade-in-up"
+                    style="animation-delay: 0.2s" data-i18n="hero_title">
+                    فن الشواء <br> <span class="text-[#ff4d00] drop-shadow-[0_0_30px_rgba(255,77,0,0.4)]">على
+                        أصوله</span>
                 </h2>
-                <p class="text-gray-400 text-lg md:text-2xl mb-12 max-w-2xl leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s">
-                    نختار أجود أنواع اللحوم البلدية، نتبلها بخلطتنا السرية المتوارثة، ونشويها على نار الفحم الهادئة لنقدم لكم مذاقاً لا يُنسى.
+                <p class="text-gray-400 text-lg md:text-2xl mb-12 max-w-2xl leading-relaxed animate-fade-in-up"
+                    style="animation-delay: 0.4s" data-i18n="hero_desc">
+                    نختار أجود أنواع اللحوم البلدية، نتبلها بخلطتنا السرية المتوارثة، ونشويها على نار الفحم الهادئة
+                    لنقدم لكم مذاقاً لا يُنسى.
                 </p>
                 <div class="flex flex-wrap gap-6 animate-fade-in-up" style="animation-delay: 0.6s">
-                    <a href="#menu" class="px-12 py-6 bg-[#ff4d00] text-white font-black rounded-2xl shadow-[0_15px_35px_rgba(255,77,0,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center gap-3">
+                    <a href="#menu"
+                        class="px-12 py-6 bg-[#ff4d00] text-white font-black rounded-2xl shadow-[0_15px_35px_rgba(255,77,0,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center gap-3"
+                        data-i18n="order_now">
                         اطلب الآن
                         <span class="material-symbols-outlined">arrow_back</span>
                     </a>
-                    <a href="#process" class="px-12 py-6 bg-white/5 backdrop-blur-md text-white font-black rounded-2xl border border-white/10 hover:bg-white/10 transition-all">سر خلطتنا</a>
+                    <a href="#process"
+                        class="px-12 py-6 bg-white/5 backdrop-blur-md text-white font-black rounded-2xl border border-white/10 hover:bg-white/10 transition-all"
+                        data-i18n="our_secret">سر خلطتنا</a>
                 </div>
             </div>
-            
+
             <!-- Stats -->
-            <div class="absolute bottom-12 left-6 md:left-20 flex gap-8 md:gap-12 animate-fade-in-up" style="animation-delay: 0.8s">
+            <div class="absolute bottom-12 left-6 md:left-20 flex gap-8 md:gap-12 animate-fade-in-up"
+                style="animation-delay: 0.8s">
                 <div class="hero-stats bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/5">
                     <span class="block text-3xl md:text-4xl font-black text-[#ff4d00]">15+</span>
-                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">سنة خبرة</span>
+                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest"
+                        data-i18n="stats_exp">سنة خبرة</span>
                 </div>
                 <div class="hero-stats bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/5">
                     <span class="block text-3xl md:text-4xl font-black text-[#ff4d00]">50k+</span>
-                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">عميل سعيد</span>
+                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest"
+                        data-i18n="stats_customers">عميل سعيد</span>
                 </div>
                 <div class="hero-stats bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/5">
                     <span class="block text-3xl md:text-4xl font-black text-[#ff4d00]">100%</span>
-                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">بلدي طازج</span>
+                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest"
+                        data-i18n="stats_fresh">بلدي طازج</span>
                 </div>
             </div>
         </section>
 
         <!-- Menu Section -->
         <section id="menu" class="py-32 px-6 md:px-12 bg-[var(--bg)] relative overflow-hidden border-t border-white/5">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ff4d00]/5 rounded-full blur-[120px] -z-10"></div>
-            
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ff4d00]/5 rounded-full blur-[120px] -z-10">
+            </div>
+
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-end gap-10 mb-16 md:mb-20">
                     <div class="px-4 md:px-0">
-                        <span class="text-[#ff4d00] font-black tracking-[0.3em] uppercase text-xs mb-4 block">قائمتنا المختارة</span>
-                        <h2 class="text-4xl md:text-7xl font-black mb-6">من شواية <span class="text-[#ff4d00]">السلطان</span></h2>
-                        <p class="text-gray-500 max-w-md text-base md:text-lg">استمتع بتشكيلة واسعة من أشهى المشويات المحضرة طازجة يومياً.</p>
+                        <span class="text-[#ff4d00] font-black tracking-[0.3em] uppercase text-xs mb-4 block"
+                            data-i18n="menu_badge">قائمتنا المختارة</span>
+                        <h2 class="text-4xl md:text-7xl font-black mb-6" data-i18n="menu_title">من شواية <span
+                                class="text-[#ff4d00]">السلطان</span></h2>
+                        <p class="text-gray-500 max-w-md text-base md:text-lg" data-i18n="menu_desc">استمتع بتشكيلة
+                            واسعة من أشهى المشويات المحضرة طازجة يومياً.</p>
                     </div>
-                    
+
                     <!-- Category Filters -->
-                    <div id="category-filters" class="flex gap-4 overflow-x-auto pb-4 px-4 no-scrollbar w-full md:w-auto">
+                    <div id="category-filters"
+                        class="flex gap-4 overflow-x-auto pb-4 px-4 no-scrollbar w-full md:w-auto">
                         <!-- Categories injected here -->
                     </div>
                 </div>
@@ -124,34 +157,45 @@
 
         <!-- Process Section -->
         <section id="process" class="py-32 px-6 bg-[var(--bg)] border-t border-white/5 relative overflow-hidden">
-             <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-[#ff4d00]/5 rounded-full blur-[100px] -z-10"></div>
+            <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-[#ff4d00]/5 rounded-full blur-[100px] -z-10"></div>
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-24">
-                    <h2 class="text-5xl md:text-7xl font-black mb-8">كيف نصنع <span class="text-[#ff4d00]">السحر؟</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto text-lg">نحن لا نطهو الطعام فحسب، نحن نصنع تجربة حسية متكاملة تبدأ من اختيار الذبيحة وتنتهي بتقديمها على مائدتكم.</p>
+                    <h2 class="text-5xl md:text-7xl font-black mb-8" data-i18n="process_title">كيف نصنع <span
+                            class="text-[#ff4d00]">السحر؟</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto text-lg" data-i18n="process_desc">نحن لا نطهو الطعام فحسب،
+                        نحن نصنع تجربة حسية متكاملة تبدأ من اختيار الذبيحة وتنتهي بتقديمها على مائدتكم.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="text-center group p-10 bg-white/5 rounded-[40px] border border-white/5 hover:border-[#ff4d00]/30 transition-all">
-                        <div class="w-24 h-24 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                    <div
+                        class="text-center group p-10 bg-white/5 rounded-[40px] border border-white/5 hover:border-[#ff4d00]/30 transition-all">
+                        <div
+                            class="w-24 h-24 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-[#ff4d00] text-5xl">inventory_2</span>
                         </div>
-                        <h3 class="text-2xl font-black mb-4">لحوم بلدية 100%</h3>
-                        <p class="text-gray-500">نتعامل مع أفضل المزارع لضمان وصول اللحوم طازجة يومياً دون تجميد.</p>
+                        <h3 class="text-2xl font-black mb-4" data-i18n="proc_1_title">لحوم بلدية 100%</h3>
+                        <p class="text-gray-500" data-i18n="proc_1_desc">نتعامل مع أفضل المزارع لضمان وصول اللحوم طازجة
+                            يومياً دون تجميد.</p>
                     </div>
-                    <div class="text-center group p-10 bg-white/5 rounded-[40px] border border-white/5 hover:border-[#ff4d00]/30 transition-all md:translate-y-12">
-                        <div class="w-24 h-24 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                    <div
+                        class="text-center group p-10 bg-white/5 rounded-[40px] border border-white/5 hover:border-[#ff4d00]/30 transition-all md:translate-y-12">
+                        <div
+                            class="w-24 h-24 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-[#ff4d00] text-5xl">auto_fix_high</span>
                         </div>
-                        <h3 class="text-2xl font-black mb-4">التتبيلة السرية</h3>
-                        <p class="text-gray-500">أكثر من 20 نوعاً من البهارات والأعشاب الطبيعية تمنح مشوياتنا نكهة لا تقاوم.</p>
+                        <h3 class="text-2xl font-black mb-4" data-i18n="proc_2_title">التتبيلة السرية</h3>
+                        <p class="text-gray-500" data-i18n="proc_2_desc">أكثر من 20 نوعاً من البهارات والأعشاب الطبيعية
+                            تمنح مشوياتنا نكهة لا تقاوم.</p>
                     </div>
-                    <div class="text-center group p-10 bg-white/5 rounded-[40px] border border-white/5 hover:border-[#ff4d00]/30 transition-all">
-                        <div class="w-24 h-24 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                    <div
+                        class="text-center group p-10 bg-white/5 rounded-[40px] border border-white/5 hover:border-[#ff4d00]/30 transition-all">
+                        <div
+                            class="w-24 h-24 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-[#ff4d00] text-5xl">local_fire_department</span>
                         </div>
-                        <h3 class="text-2xl font-black mb-4">شواء على الفحم</h3>
-                        <p class="text-gray-500">نستخدم أجود أنواع فحم الحمضيات الذي يمنح اللحم رائحة الشواء الأصيلة.</p>
+                        <h3 class="text-2xl font-black mb-4" data-i18n="proc_3_title">شواء على الفحم</h3>
+                        <p class="text-gray-500" data-i18n="proc_3_desc">نستخدم أجود أنواع فحم الحمضيات الذي يمنح اللحم
+                            رائحة الشواء الأصيلة.</p>
                     </div>
                 </div>
             </div>
@@ -163,14 +207,19 @@
                 <div class="flex flex-col md:flex-row items-center gap-20">
                     <div class="w-full md:w-1/2">
                         <div class="relative">
-                            <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#ff4d00] rounded-full blur-[80px] opacity-20"></div>
-                            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1000&auto=format&fit=crop" class="rounded-[40px] shadow-2xl relative z-10" alt="Restaurant">
+                            <div
+                                class="absolute -top-10 -right-10 w-40 h-40 bg-[#ff4d00] rounded-full blur-[80px] opacity-20">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1000&auto=format&fit=crop"
+                                class="rounded-[40px] shadow-2xl relative z-10" alt="Restaurant">
                         </div>
                     </div>
                     <div class="w-full md:w-1/2">
-                        <span class="text-[#ff4d00] font-black uppercase tracking-widest text-xs mb-4 block">آراء عملائنا</span>
-                        <h2 class="text-5xl font-black mb-12">ماذا يقولون عن <br> <span class="text-[#ff4d00]">تجربة السلطان؟</span></h2>
-                        
+                        <span class="text-[#ff4d00] font-black uppercase tracking-widest text-xs mb-4 block"
+                            data-i18n="review_badge">آراء عملائنا</span>
+                        <h2 class="text-5xl font-black mb-12" data-i18n="review_title">ماذا يقولون عن <br> <span
+                                class="text-[#ff4d00]">تجربة السلطان؟</span></h2>
+
                         <div class="space-y-8">
                             <div class="bg-white/5 p-8 rounded-3xl border border-white/5">
                                 <div class="flex gap-1 mb-4 text-yellow-500">
@@ -180,12 +229,13 @@
                                     <span class="material-symbols-outlined">star</span>
                                     <span class="material-symbols-outlined">star</span>
                                 </div>
-                                <p class="text-lg italic text-gray-300 mb-6">"أفضل كفتة أكلتها في حياتي! الطعم مدخن بشكل مثالي واللحم طري جداً. الخدمة أيضاً ممتازة."</p>
+                                <p class="text-lg italic text-gray-300 mb-6" data-i18n="review_text">"أفضل كفتة أكلتها
+                                    في حياتي! الطعم مدخن بشكل مثالي واللحم طري جداً. الخدمة أيضاً ممتازة."</p>
                                 <div class="flex items-center gap-4">
                                     <div class="w-12 h-12 bg-[#ff4d00] rounded-full"></div>
                                     <div>
-                                        <h4 class="font-bold">أحمد محمد</h4>
-                                        <span class="text-xs text-gray-500">عميل وفي</span>
+                                        <h4 class="font-bold" data-i18n="review_author">أحمد محمد</h4>
+                                        <span class="text-xs text-gray-500" data-i18n="review_status">عميل وفي</span>
                                     </div>
                                 </div>
                             </div>
@@ -197,58 +247,74 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-32 px-6 bg-[var(--bg)] border-t border-white/5 relative overflow-hidden">
-            <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#ff4d00]/5 rounded-full blur-[120px] -z-10"></div>
-            
+            <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#ff4d00]/5 rounded-full blur-[120px] -z-10">
+            </div>
+
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                     <!-- Contact Info -->
                     <div>
-                        <span class="text-[#ff4d00] font-black uppercase tracking-widest text-xs mb-4 block">تواصل معنا</span>
-                        <h2 class="text-5xl md:text-7xl font-black mb-12">نحن هنا <br> <span class="text-[#ff4d00]">لخدمتك دائماً</span></h2>
-                        
+                        <span class="text-[#ff4d00] font-black uppercase tracking-widest text-xs mb-4 block"
+                            data-i18n="contact_badge">تواصل معنا</span>
+                        <h2 class="text-5xl md:text-7xl font-black mb-12" data-i18n="contact_title">نحن هنا <br> <span
+                                class="text-[#ff4d00]">لخدمتك دائماً</span></h2>
+
                         <div class="space-y-10">
                             <div class="flex gap-6 items-start">
-                                <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/5">
+                                <div
+                                    class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/5">
                                     <span class="material-symbols-outlined text-[#ff4d00] text-3xl">call</span>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold mb-2">رقم الهاتف</h4>
-                                    <p class="text-gray-400 mb-1">للحجز والاستفسار:</p>
-                                    <a href="tel:01000000000" class="text-2xl font-black text-white hover:text-[#ff4d00] transition-colors">01000000000</a>
+                                    <h4 class="text-xl font-bold mb-2" data-i18n="phone_label">رقم الهاتف</h4>
+                                    <p class="text-gray-400 mb-1" data-i18n="phone_desc">للحجز والاستفسار:</p>
+                                    <a href="tel:01000000000"
+                                        class="text-2xl font-black text-white hover:text-[#ff4d00] transition-colors">01000000000</a>
                                 </div>
                             </div>
-                            
+
                             <div class="flex gap-6 items-start">
-                                <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/5">
+                                <div
+                                    class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/5">
                                     <span class="material-symbols-outlined text-[#ff4d00] text-3xl">location_on</span>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold mb-2">عنواننا</h4>
-                                    <p class="text-gray-400">القاهرة، مدينة نصر، شارع عباس العقاد، بجوار كبري الساعة.</p>
-                                    <a href="#" class="text-[#ff4d00] font-bold mt-2 inline-block hover:underline">عرض على الخريطة</a>
+                                    <h4 class="text-xl font-bold mb-2" data-i18n="address_label">عنواننا</h4>
+                                    <p class="text-gray-400" data-i18n="address_desc">القاهرة، مدينة نصر، شارع عباس
+                                        العقاد، بجوار كبري الساعة.</p>
+                                    <a href="#" class="text-[#ff4d00] font-bold mt-2 inline-block hover:underline"
+                                        data-i18n="map_link">عرض على الخريطة</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Contact Form -->
                     <div class="bg-white/5 backdrop-blur-xl p-10 rounded-[40px] border border-white/10 relative z-10">
                         <form class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="relative">
-                                    <label class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4">الاسم</label>
-                                    <input type="text" placeholder="اسمك الكريم" class="w-full bg-black/30 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
+                                    <label class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4"
+                                        data-i18n="form_name">الاسم</label>
+                                    <input type="text" placeholder="اسمك الكريم"
+                                        class="w-full bg-black/30 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
                                 </div>
                                 <div class="relative">
-                                    <label class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4">الهاتف</label>
-                                    <input type="tel" placeholder="01xxxxxxxxx" class="w-full bg-black/30 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
+                                    <label class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4"
+                                        data-i18n="form_phone">الهاتف</label>
+                                    <input type="tel" placeholder="01xxxxxxxxx"
+                                        class="w-full bg-black/30 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
                                 </div>
                             </div>
                             <div class="relative">
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4">الرسالة</label>
-                                <textarea rows="4" placeholder="كيف يمكننا مساعدتك؟" class="w-full bg-black/30 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#ff4d00] transition-all text-white resize-none"></textarea>
+                                <label class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4"
+                                    data-i18n="form_msg">الرسالة</label>
+                                <textarea rows="4" placeholder="كيف يمكننا مساعدتك؟"
+                                    class="w-full bg-black/30 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#ff4d00] transition-all text-white resize-none"></textarea>
                             </div>
-                            <button type="submit" class="w-full py-5 bg-[#ff4d00] text-white font-black rounded-2xl text-lg shadow-[0_15px_35px_rgba(255,77,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all">إرسال الرسالة</button>
+                            <button type="submit"
+                                class="w-full py-5 bg-[#ff4d00] text-white font-black rounded-2xl text-lg shadow-[0_15px_35px_rgba(255,77,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all"
+                                data-i18n="form_submit">إرسال الرسالة</button>
                         </form>
                     </div>
                 </div>
@@ -261,92 +327,111 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
             <div class="col-span-1 md:col-span-2">
                 <img src="./assets/logo.png" alt="Logo" class="h-28 mb-8 filter brightness-0 invert">
-                <p class="text-gray-500 max-w-sm mb-8 leading-relaxed">
+                <p class="text-gray-500 max-w-sm mb-8 leading-relaxed" data-i18n="footer_desc">
                     مشويات السلطان ليست مجرد مطعم، بل هي تجربة تذوق فريدة تجمع بين أصالة الماضي وجودة الحاضر.
                 </p>
                 <div class="flex gap-4">
-                    <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#ff4d00] transition-colors"><span class="material-symbols-outlined">share</span></a>
-                    <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#ff4d00] transition-colors"><span class="material-symbols-outlined">call</span></a>
+                    <a href="#"
+                        class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#ff4d00] transition-colors"><span
+                            class="material-symbols-outlined">share</span></a>
+                    <a href="#"
+                        class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#ff4d00] transition-colors"><span
+                            class="material-symbols-outlined">call</span></a>
                 </div>
             </div>
             <div>
-                <h4 class="text-lg font-bold mb-8 text-[#ff4d00]">روابط سريعة</h4>
+                <h4 class="text-lg font-bold mb-8 text-[#ff4d00]" data-i18n="footer_links_title">روابط سريعة</h4>
                 <ul class="space-y-4 text-gray-500">
-                    <li><a href="#" class="hover:text-white transition-colors">القائمة الرئيسية</a></li>
-                    <li><a href="#menu" class="hover:text-white transition-colors">عروض السلطان</a></li>
-                    <li><a href="#contact" class="hover:text-white transition-colors">تواصل معنا</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_home">القائمة
+                            الرئيسية</a></li>
+                    <li><a href="#menu" class="hover:text-white transition-colors" data-i18n="footer_offers">عروض
+                            السلطان</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors" data-i18n="footer_contact">تواصل
+                            معنا</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-lg font-bold mb-8 text-[#ff4d00]">مواعيد العمل</h4>
+                <h4 class="text-lg font-bold mb-8 text-[#ff4d00]" data-i18n="footer_hours_title">مواعيد العمل</h4>
                 <ul class="space-y-4 text-gray-500 text-sm">
                     <li class="flex justify-between"><span>السبت - الخميس</span> <span>12:00 م - 12:00 ص</span></li>
                     <li class="flex justify-between"><span>الجمعة</span> <span>01:00 م - 01:00 ص</span></li>
                     <li class="mt-8 pt-8 border-t border-white/5">
-                        <p class="text-white font-bold mb-2">خدمة التوصيل</p>
+                        <p class="text-white font-bold mb-2" data-i18n="footer_delivery">خدمة التوصيل</p>
                         <p class="text-[#ff4d00] text-xl font-black">01000000000</p>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
-            <p>© 2024 مشويات السلطان. جميع الحقوق محفوظة.</p>
+            <p data-i18n="copyright">© 2024 مشويات السلطان. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <!-- Cart Drawer -->
-    <div id="cart-drawer" class="fixed inset-y-4 right-0 w-[90%] md:w-[480px] bg-[var(--bg)] z-[100] translate-x-full transition-transform duration-500 border border-white/10 flex flex-col rounded-r-none rounded-l-[40px] shadow-2xl overflow-hidden">
+    <div id="cart-drawer"
+        class="fixed inset-y-4 right-0 w-[90%] md:w-[480px] bg-[var(--bg)] z-[100] translate-x-full transition-transform duration-500 border border-white/10 flex flex-col rounded-r-none rounded-l-[40px] shadow-2xl overflow-hidden">
         <div class="p-8 border-b border-white/5 flex justify-between items-center">
-            <button onclick="toggleCart()" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-red-500/20 hover:text-red-500 transition-colors">
+            <button onclick="toggleCart()"
+                class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-red-500/20 hover:text-red-500 transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
-            <h2 class="text-2xl font-black">طلباتك <span class="text-[#ff4d00]">الجاهزة</span></h2>
+            <h2 class="text-2xl font-black" data-i18n="cart_title">طلباتك <span class="text-[#ff4d00]">الجاهزة</span>
+            </h2>
         </div>
         <div id="cart-items" class="flex-grow overflow-y-auto p-8 space-y-6">
             <!-- Items -->
         </div>
         <div class="p-8 bg-black/50 border-t border-white/5">
             <div class="flex justify-between items-center mb-8">
-                <span class="text-gray-400">إجمالي الحساب</span>
+                <span class="text-gray-400" data-i18n="cart_total_label">إجمالي الحساب</span>
                 <span id="cart-total" class="text-3xl font-black text-[#ff4d00]">0 ج.م</span>
             </div>
-            <button onclick="openCheckoutModal()" class="w-full py-5 bg-[#ff4d00] text-white font-black rounded-2xl text-lg shadow-[0_15px_35px_rgba(255,77,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
+            <button onclick="openCheckoutModal()"
+                class="w-full py-5 bg-[#ff4d00] text-white font-black rounded-2xl text-lg shadow-[0_15px_35px_rgba(255,77,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3"
+                data-i18n="cart_checkout">
                 إتمام الطلب عبر واتساب
             </button>
         </div>
     </div>
-    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[90] opacity-0 pointer-events-none transition-opacity duration-500"></div>
+    <div id="cart-overlay" onclick="toggleCart()"
+        class="fixed inset-0 bg-black/80 backdrop-blur-md z-[90] opacity-0 pointer-events-none transition-opacity duration-500">
+    </div>
 
     <!-- Product Details Modal -->
-    <div id="product-modal" class="fixed inset-0 z-[150] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500">
+    <div id="product-modal"
+        class="fixed inset-0 z-[150] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeProductModal()"></div>
-        <div class="bg-[var(--bg)] w-full max-w-2xl rounded-[40px] border border-white/10 overflow-hidden relative z-10 scale-90 transition-transform duration-500">
-            <button onclick="closeProductModal()" class="absolute top-6 right-6 w-12 h-12 bg-black/50 backdrop-blur-md rounded-2xl flex items-center justify-center text-white z-20 hover:bg-[#ff4d00] transition-colors">
+        <div
+            class="bg-[var(--bg)] modal-content w-full max-w-2xl rounded-[40px] border border-white/10 overflow-hidden relative z-10 scale-90 transition-transform duration-500">
+            <button onclick="closeProductModal()"
+                class="absolute top-6 right-6 w-12 h-12 bg-black/50 backdrop-blur-md rounded-2xl flex items-center justify-center text-white z-20 hover:bg-[#ff4d00] transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div class="flex flex-col md:flex-row h-full max-h-[90vh] overflow-y-auto">
                 <div class="w-full md:w-1/2 h-64 md:h-auto relative">
                     <img id="modal-product-image" src="" alt="" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent md:hidden"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent md:hidden">
+                    </div>
                 </div>
                 <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                    <span id="modal-product-category" class="text-[#ff4d00] font-black uppercase tracking-widest text-xs mb-4 block"></span>
+                    <span id="modal-product-category"
+                        class="text-[#ff4d00] font-black uppercase tracking-widest text-xs mb-4 block"></span>
                     <h2 id="modal-product-name" class="text-3xl md:text-4xl font-black mb-6"></h2>
                     <p id="modal-product-description" class="text-gray-500 text-lg leading-relaxed mb-8"></p>
-                    
+
                     <!-- Options -->
                     <div class="space-y-6 mb-10">
                         <div>
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-3">اختر الحجم</span>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-3"
+                                data-i18n="modal_size_label">اختر الحجم</span>
                             <div id="modal-sizes" class="flex gap-3">
                                 <!-- Sizes injected here -->
                             </div>
                         </div>
                         <div>
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-3">إضافات مميزة</span>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-3"
+                                data-i18n="modal_addon_label">إضافات مميزة</span>
                             <div id="modal-addons" class="grid grid-cols-2 gap-3">
                                 <!-- Addons injected here -->
                             </div>
@@ -355,10 +440,12 @@
 
                     <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
                         <div>
-                            <span class="text-gray-400 text-sm block mb-1">السعر</span>
+                            <span class="text-gray-400 text-sm block mb-1" data-i18n="modal_price_label">السعر</span>
                             <span id="modal-product-price" class="text-3xl font-black text-[#ff4d00]"></span>
                         </div>
-                        <button id="modal-add-btn" class="px-8 py-4 bg-[#ff4d00] text-white font-black rounded-2xl shadow-lg hover:scale-105 active:scale-95 transition-all">
+                        <button id="modal-add-btn"
+                            class="px-8 py-4 bg-[#ff4d00] text-white font-black rounded-2xl shadow-lg hover:scale-105 active:scale-95 transition-all"
+                            data-i18n="modal_add_cart">
                             إضافة للسلة
                         </button>
                     </div>
@@ -368,35 +455,50 @@
     </div>
 
     <!-- Checkout Modal -->
-    <div id="checkout-modal" class="fixed inset-0 z-[150] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500">
+    <div id="checkout-modal"
+        class="fixed inset-0 z-[150] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeCheckoutModal()"></div>
-        <div class="bg-[#0f0f0f] w-full max-w-lg rounded-[40px] border border-white/10 p-10 relative z-10 scale-90 transition-transform duration-500">
+        <div
+            class="bg-[#0f0f0f] modal-content w-full max-lg rounded-[40px] border border-white/10 p-10 relative z-10 scale-90 transition-transform duration-500">
             <div class="text-center mb-10">
                 <div class="w-20 h-20 bg-[#ff4d00]/10 rounded-3xl flex items-center justify-center mx-auto mb-6">
                     <span class="material-symbols-outlined text-[#ff4d00] text-4xl">local_shipping</span>
                 </div>
-                <h2 class="text-3xl font-black mb-2">بيانات التوصيل</h2>
-                <p class="text-gray-500">يرجى إدخال بياناتك لنتمكن من توصيل الطلب إليك</p>
+                <h2 class="text-3xl font-black mb-2" data-i18n="checkout_title">بيانات التوصيل</h2>
+                <p class="text-gray-500" data-i18n="checkout_desc">يرجى إدخال بياناتك لنتمكن من توصيل الطلب إليك</p>
             </div>
-            
+
             <div class="space-y-6">
                 <div class="relative">
-                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-500">person</span>
-                    <input type="text" id="modal-name" placeholder="الاسم بالكامل" class="w-full bg-white/5 border border-white/10 rounded-2xl pr-12 pl-4 py-5 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
+                    <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-500">person</span>
+                    <input type="text" id="modal-name" data-i18n-placeholder="form_name_placeholder"
+                        placeholder="الاسم بالكامل"
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl pr-12 pl-4 py-5 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
                 </div>
                 <div class="relative">
-                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-500">call</span>
-                    <input type="tel" id="modal-phone" placeholder="رقم الهاتف" class="w-full bg-white/5 border border-white/10 rounded-2xl pr-12 pl-4 py-5 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
+                    <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-500">call</span>
+                    <input type="tel" id="modal-phone" data-i18n-placeholder="form_phone_placeholder"
+                        placeholder="رقم الهاتف"
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl pr-12 pl-4 py-5 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
                 </div>
                 <div class="relative">
-                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-500">location_on</span>
-                    <input type="text" id="modal-address" placeholder="العنوان بالتفصيل" class="w-full bg-white/5 border border-white/10 rounded-2xl pr-12 pl-4 py-5 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
+                    <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-500">location_on</span>
+                    <input type="text" id="modal-address" data-i18n-placeholder="form_address_placeholder"
+                        placeholder="العنوان بالتفصيل"
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl pr-12 pl-4 py-5 focus:outline-none focus:border-[#ff4d00] transition-all text-white">
                 </div>
-                
-                <button onclick="confirmOrder()" class="w-full py-5 bg-[#ff4d00] text-white font-black rounded-2xl text-lg shadow-[0_15px_35px_rgba(255,77,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all mt-4">
+
+                <button onclick="confirmOrder()"
+                    class="w-full py-5 bg-[#ff4d00] text-white font-black rounded-2xl text-lg shadow-[0_15px_35px_rgba(255,77,0,0.3)] hover:scale-[1.02] active:scale-95 transition-all mt-4"
+                    data-i18n="checkout_confirm">
                     تأكيد الطلب وإرسال
                 </button>
-                <button onclick="closeCheckoutModal()" class="w-full py-4 text-gray-500 font-bold hover:text-white transition-colors">
+                <button onclick="closeCheckoutModal()"
+                    class="w-full py-4 text-gray-500 font-bold hover:text-white transition-colors"
+                    data-i18n="checkout_cancel">
                     إلغاء
                 </button>
             </div>
@@ -404,47 +506,65 @@
     </div>
 
     <!-- Mobile Bottom Navbar -->
-    <div class="fixed bottom-0 inset-x-0 bg-black/60 backdrop-blur-2xl border-t border-white/5 z-[90] flex md:hidden justify-around items-center h-20 px-4 safe-area-bottom">
-        <a href="#" class="flex flex-col items-center gap-1 text-[#ff4d00]">
+    <div
+        class="fixed bottom-0 inset-x-0 bg-black/60 backdrop-blur-2xl border-t border-white/5 z-[90] flex md:hidden justify-around items-center h-20 px-4 safe-area-bottom">
+        <a href="#" class="mobile-link flex flex-col items-center gap-1 text-[#ff4d00]">
             <span class="material-symbols-outlined">home</span>
-            <span class="text-[10px] font-bold">الرئيسية</span>
+            <span class="text-[10px] font-bold" data-i18n="mobile_home">الرئيسية</span>
         </a>
-        <button onclick="toggleCart()" class="relative flex flex-col items-center gap-1 text-gray-500">
-            <span class="material-symbols-outlined">shopping_basket</span>
-            <span id="mobile-cart-count" class="absolute -top-2 -right-2 bg-[#ff4d00] text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-black hidden">0</span>
-            <span class="text-[10px] font-bold">السلة</span>
-        </button>
-        <a href="#menu" class="flex flex-col items-center gap-1 text-gray-500">
+        <a href="#menu" class="mobile-link flex flex-col items-center gap-1 text-gray-500">
             <span class="material-symbols-outlined">restaurant_menu</span>
-            <span class="text-[10px] font-bold">القائمة</span>
+            <span class="text-[10px] font-bold" data-i18n="mobile_menu">القائمة</span>
         </a>
-        <a href="#process" class="flex flex-col items-center gap-1 text-gray-500">
+        <a href="#process" class="mobile-link flex flex-col items-center gap-1 text-gray-500">
             <span class="material-symbols-outlined">auto_fix_high</span>
-            <span class="text-[10px] font-bold">سر المهنة</span>
+            <span class="text-[10px] font-bold" data-i18n="mobile_secret">سر المهنة</span>
         </a>
-        <a href="#contact" class="flex flex-col items-center gap-1 text-gray-500">
+        <a href="#contact" class="mobile-link flex flex-col items-center gap-1 text-gray-500">
             <span class="material-symbols-outlined">alternate_email</span>
-            <span class="text-[10px] font-bold">تواصل</span>
+            <span class="text-[10px] font-bold" data-i18n="mobile_contact">تواصل</span>
         </a>
     </div>
 
     <!-- Toast Notifications -->
     <div id="toast-container" class="fixed bottom-10 left-10 z-[200] flex flex-col gap-4"></div>
 
-    <button id="scroll-top" class="fixed bottom-24 right-8 w-14 h-14 bg-[#ff4d00] text-white rounded-2xl flex items-center justify-center shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-[80] hover:scale-110 active:scale-90">
-        <span class="material-symbols-outlined">arrow_upward</span>
-    </button>
+    <!-- Floating Buttons Container -->
+    <div class="fixed bottom-24 right-6 z-[80] flex flex-col gap-4">
+        <!-- Floating Cart -->
+        <button onclick="toggleCart()"
+            class="w-14 h-14 bg-[#ff4d00] text-white rounded-2xl flex items-center justify-center shadow-[0_15px_35px_rgba(255,77,0,0.4)] relative hover:scale-110 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">shopping_basket</span>
+            <span id="mobile-cart-count"
+                class="absolute -top-1 -right-1 bg-white text-[#ff4d00] text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center border-2 border-[#ff4d00] hidden animate-bounce">0</span>
+        </button>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/201000000000" target="_blank" class="fixed bottom-40 right-8 w-14 h-14 bg-[#ff4d00] text-white rounded-2xl flex items-center justify-center shadow-[0_15px_35px_rgba(255,77,0,0.4)] z-[80] hover:scale-110 active:scale-90 transition-all">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-    </a>
+        <!-- Scroll to Top -->
+        <button id="scroll-top"
+            class="w-16 h-16 bg-white/5 border border-white/10 text-white rounded-2xl flex items-center justify-center shadow-xl opacity-0 translate-y-10 transition-all duration-500 hover:bg-white/10">
+            <span class="material-symbols-outlined">arrow_upward</span>
+        </button>
+    </div>
+
+    <!-- Admin Floating Access -->
+    <div class="fixed bottom-24 left-6 z-[80] group">
+        <div class="absolute bottom-full left-0 mb-4 transition-all duration-300 pointer-events-none">
+            <div
+                class="bg-black/80 backdrop-blur-md text-white text-[10px] font-black py-2 px-4 rounded-xl border border-white/10 whitespace-nowrap shadow-2xl animate-bounce">
+                اذهب إلى لوحة التحكم
+            </div>
+            <div class="w-2 h-2 bg-black/80 rotate-45 border-r border-b border-white/10 mx-4 -mt-1"></div>
+        </div>
+        <a href="./admin/dashboard.html"
+            class="w-12 h-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center text-gray-500 hover:text-[#ff4d00] hover:bg-white/10 transition-all shadow-xl">
+            <span class="material-symbols-outlined">admin_panel_settings</span>
+        </a>
+    </div>
 
     <!-- Scripts -->
     <script src="./js/lang.js"></script>
     <script src="./js/theme.js"></script>
     <script src="./js/scripts.js"></script>
 </body>
+
 </html>
